@@ -7,8 +7,11 @@ const adminData = require('../routes/admin');
 
 router.get('/', (req, res, next) => {
     // res.send('<h1>Hello from express</h1>');
-    console.log(adminData.products);
-    res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+    // console.log(adminData.products);
+    // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+
+    // use templating engine
+    res.render('shop');
 });
 
 module.exports = router;
