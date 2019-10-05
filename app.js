@@ -1,13 +1,26 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const expressHbs = require('express-handlebars');
 
 const adminData = require('./routes/admin');
 const shopRouter = require('./routes/shop');
 
 const app = express();
 
-app.set('view engine', 'pug');
+// use pug templating engine
+// app.set('view engine', 'pug');
+
+// use handlebars templating engine
+// handlebars is not built in on express, so we must set engine first
+// app.engine('handlebars', expressHbs());
+// app.set('view engine', 'handlebars');
+
+// or we can use like on code below (effect on view file extension)
+// on handlebars view engine cannot read the logic, so the logic keep on express(js) code only
+app.engine('hbs', expressHbs());
+app.set('view engine', 'hbs');
+
 app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({ extended: false }));    
