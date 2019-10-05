@@ -11,7 +11,14 @@ router.get('/', (req, res, next) => {
     // res.sendFile(path.join(rootDir, 'views', 'shop.html'));
 
     // use templating engine
-    res.render('shop', { pageTitle: 'My Shop', pagePath: '/', products: adminData.products, hasProducts: adminData.products.length > 0 });
+    res.render('shop', { 
+        pageTitle: 'My Shop', 
+        pagePath: '/', 
+        products: adminData.products,
+        hasProducts: adminData.products.length > 0,
+        activeShop: true,
+        productCSS: true, 
+    });
 });
 
 module.exports = router;

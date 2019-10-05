@@ -10,7 +10,13 @@ router.get('/add-product', (req, res, next) => {
     // res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 
     // use templateing engine
-    res.render('add-product', { pageTitle: 'Add Product', pagePath: '/admin/add-product' });
+    res.render('add-product', { 
+        pageTitle: 'Add Product', 
+        pagePath: '/admin/add-product',
+        activeAddProduct: true,
+        formsCSS: true, 
+        productCSS: true, 
+    });
 });
 
 router.post('/add-product', (req, res, next) => {
