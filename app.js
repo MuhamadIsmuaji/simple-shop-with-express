@@ -18,8 +18,11 @@ const app = express();
 
 // or we can use like on code below (effect on view file extension)
 // on handlebars view engine cannot read the logic, so the logic keep on express(js) code only
-app.engine('hbs', expressHbs({ layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs' }));
-app.set('view engine', 'hbs');
+// app.engine('hbs', expressHbs({ layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs' }));
+// app.set('view engine', 'hbs');
+
+// use ejs templating engine
+app.set('view engine', 'ejs');
 
 app.set('views', 'views');
 
