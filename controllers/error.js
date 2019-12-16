@@ -1,4 +1,3 @@
-exports.getNotFoundPage = (req, res, next) => {
-    // use templating engine
-    res.render('404', { pageTitle: 'Page Not Found', pagePath: 'notfound' });
-}
+exports.get404 = (req, res, next) => {
+  res.status(404).render('404', { pageTitle: 'Page Not Found', path: '/404' });
+};
